@@ -1,0 +1,20 @@
+# This is a basic workflow that is manually triggered
+name: run unit test of feature branches 
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+ push:
+   branches: 
+        'feature/*'
+jobs:  
+   run-unit-test: 
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: run unit test
+        run: mvn test 
+        
