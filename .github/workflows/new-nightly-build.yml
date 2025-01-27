@@ -3,7 +3,7 @@ name: nightly build at 1pm
 on:
   push: 
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 13 * * *'
 
 jobs:
   nightly_build:
@@ -16,7 +16,7 @@ jobs:
         run: mvn test 
         
       - name: Build with Maven   
-        run: mvn -DskipTests -8 package --no-transfer-progress --file ./pom.xml
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
 
       - name: Upload WAR artifact
         uses: actions/upload-artifact@v3
