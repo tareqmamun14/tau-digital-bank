@@ -3,7 +3,7 @@ name: nightly build at 1pm
 on:
   push: 
   schedule:
-    - cron: '0 1 * * *' # Adjust to your required time
+    - cron: '* * * * *' # Adjust to your required time
 
 jobs:
   nightly_build:
